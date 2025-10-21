@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="container d-flex justify-content-between align-items-center">
         {/* --- Left: Logo --- */}
         <Link className="navbar-brand fw-semibold" href="/">
-          <img src="/logo.png" alt="Raccoon Street Logo" style={{ height: "55px" }} />
+          <img src="/raccoon_street_logo.svg" alt="Raccoon Street Logo" style={{ height: "55px" }} />
         </Link>
 
         {/* --- Middle: Nav Links --- */}
@@ -28,7 +28,7 @@ export default function Navbar() {
               <Link
                 href="/"
                 className={`nav-link fw-semibold${
-                  pathname === "/" ? " active text-success" : ""
+                  pathname === "/" ? " active text-grey" : ""
                 }`}
               >
                 Home
@@ -39,7 +39,7 @@ export default function Navbar() {
               <Link
                 href="/about"
                 className={`nav-link fw-semibold${
-                  pathname === "/about" ? " active text-primary" : ""
+                  pathname === "/about" ? " active text-grey" : ""
                 }`}
               >
                 About

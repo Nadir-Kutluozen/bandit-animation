@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Raccoon Street</title>
+        <title>Bandit Animation</title>
         <meta name="description" content="Zero-learning-curve SVG animation to React components." />
       </Head>
       <Header></Header>
@@ -74,8 +74,8 @@ export default function Home() {
       </section>
       <footer className="">
         <div className="container py-2 text-center ">
-          <p className="text-light mb-0">Made with 🦝 by Raccoon Street.</p>
-           <p className="text-center text-light ">© {new Date().getFullYear()} Raccoon Street</p>
+          <p className="text-light mb-0">Made with 🦝 by Bandit Animation.</p>
+           <p className="text-center text-light ">© {new Date().getFullYear()} Bandit Animation</p>
         </div>
       </footer>
     </>
