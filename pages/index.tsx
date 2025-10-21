@@ -1,117 +1,83 @@
+// pages/index.tsx
+import Header from "@/components/header/Header";
 import Head from "next/head";
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"], 
-});
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <>    
+    <>
       <Head>
         <title>Raccoon Street</title>
-        <meta name="description" content="software tool that delivers easy animation implementation for developers, no learning curve!" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Zero-learning-curve SVG animation to React components." />
       </Head>
-      <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
-      >
-        <main className={styles.main}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js logo"
-            width={180}
-            height={38}
-            priority
-          />
-          <ol>
-            <li>
-              Get started by editing <code>pages/index.tsx</code>.
-            </li>
-            <li>Save and see your changes instantly.</li>
-          </ol>
+      <Header></Header>
 
-          <div className={styles.ctas}>
-            <a
-              className={styles.primary}
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className={styles.logo}
-                src="/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy now
-            </a>
-            <a
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.secondary}
-            >
-              Read our docs
-            </a>
+
+
+      <header className="bg-custom-dark text-light py-5">
+        <div className="container py-4">
+          <div className="row align-items-center g-5">
+            <div className="col-lg-7">
+              <h1 className="display-4 fw-bold lh-1 mb-3">Animate SVGs. <span className="text-secondary">No learning curve.</span></h1>
+              <p className="lead text-secondary">
+                Import or draw your mascot, pick preset states (idle, hover, click), and export a transparent SVG and a typed React component.
+              </p>
+              <div className="d-flex gap-3">
+                <Link href="/editor" className="btn btn-primary btn-lg">Start Editor →</Link>
+                <a href="#features" className="btn btn-outline-light btn-lg">Learn More</a>
+              </div>
+            </div>
+            <div className="col-lg-5">
+              <div className="card shadow-lg bg-body rounded-4">
+                <div className="card-header">Preview</div>
+                <div className="card-body" style={{ minHeight: 240, background: "linear-gradient(180deg,#f8f9fa,#e9ecef)" }}>
+                  <div className="h-100 d-flex align-items-center justify-content-center text-muted">
+                    Timeline • Layers • Canvas
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </main>
-        <footer className={styles.footer}>
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="/file.svg"
-              alt="File icon"
-              width={16}
-              height={16}
-            />
-            Learn
-          </a>
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="/window.svg"
-              alt="Window icon"
-              width={16}
-              height={16}
-            />
-            Examples
-          </a>
-          <a
-            href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="/globe.svg"
-              alt="Globe icon"
-              width={16}
-              height={16}
-            />
-            Go to nextjs.org →
-          </a>
-        </footer>
-      </div>
+        </div>
+      </header>
+
+      <section id="features" className="py-5  p-3 bg-custom-dark ">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-md-4">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title">Draw or Import</h5>
+                  <p className="card-text text-muted">Start from your SVG mascot or sketch simple shapes. Transparent by default.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title">Preset States</h5>
+                  <p className="card-text text-muted">Idle (breathe/blink), Hover (wave), Click (bounce). No timelines to learn.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title">Export to React</h5>
+                  <p className="card-text text-muted">Get a typed TSX component with <code>size</code>, <code>color</code>, <code>state</code>, and <code>onClick</code> props.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </section>
+      <footer className="">
+        <div className="container py-2 text-center ">
+          <p className="text-light mb-0">Made with 🦝 by Raccoon Street.</p>
+           <p className="text-center text-light ">© {new Date().getFullYear()} Raccoon Street</p>
+        </div>
+      </footer>
     </>
   );
 }
