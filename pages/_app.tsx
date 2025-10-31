@@ -10,10 +10,6 @@ const inconsolata = Inconsolata({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
-  }, []);
-
   return (
     <div className={inconsolata.className}>
       <Component {...pageProps} />
