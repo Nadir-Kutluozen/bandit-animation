@@ -8,11 +8,7 @@ import { useEffect } from "react";
 export default function Navbar() {
   const pathname = usePathname();
 
-  // Enable Bootstrap JS (for toggler on mobile)
-  useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
-  }, []);
-
+ 
   return (
     <nav className="navbar bg-custom-dark navbar-expand-lg navbar-dark  border-bottom sticky-top">
       <div className="container d-flex justify-content-between align-items-center">
