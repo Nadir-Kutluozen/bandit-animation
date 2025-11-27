@@ -1,0 +1,12 @@
+/* Squares.css */
+.squaresCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* z-index: -1; removed to allow interaction if needed, control via parent */
+    /* behind your form */
+    pointer-events: auto;
+    /* form stays clickable */
+}
