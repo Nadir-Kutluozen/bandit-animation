@@ -1,32 +1,118 @@
 /* styles/globals.css */
 
-/* ===== Base colors ===== */
+/* ===== Google Font: Orbitron (Space Theme) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+
+/* ===== Variables ===== */
+:root {
+  /* Deep Space Background */
+  --color-bg-dark: #050508;
+
+  /* Purple/Pink Mix - The "Bandit" Brand Color */
+  --color-primary: #a855f7;
+  --color-primary-hover: #9333ea;
+  --color-accent: #d946ef;
+  /* Pinkish accent */
+
+  /* Text Colors */
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-text-secondary: #94a3b8;
+  /* Added for consistency */
+
+  /* Borders */
+  --border-color: rgba(168, 85, 247, 0.4);
+  /* Subtle purple border */
+  --border-glow: rgba(168, 85, 247, 0.8);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(11, 11, 18, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Base Styles ===== */
 body {
-  background-color: #0b0b12;
-  color: #f1f1f1;
-  font-family: "JetBrains Mono", monospace;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+  font-family: 'Orbitron', sans-serif;
+  /* Fallback to Orbitron since custom font is lost */
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+}
+
+/* ===== Typography ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  /* Slightly wider for sci-fi feel */
+}
+
+/* ===== Utility Classes (Video Game Aesthetic) ===== */
+.text-gradient {
+  background: linear-gradient(to right, #c084fc, #e879f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Standard property */
+}
+
+.border-glow {
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.1);
+  transition: all 0.3s ease;
+}
+
+.border-glow:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.2);
+}
+
+/* ===== Bootstrap Overrides ===== */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.btn-outline-primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* Rounded-4 is a bootstrap class, but we can enforce it if needed or use it directly */
+.rounded-4 {
+  border-radius: 1rem !important;
 }
 
 /* ===== Navbar tweaks ===== */
 .nav-link {
-  transition: color 0.9s ease;
+  transition: color 0.3s ease;
+  color: var(--color-text-muted) !important;
 }
 
 .nav-link:hover {
-  color: #f6e4ff !important;
+  color: var(--color-accent) !important;
 }
 
 .nav-link.active {
-  color: #f6e4ff !important;
-  border-bottom: 2px solid #f6e4ff;
-}
-
-.btn-outline-primary {
-  border-width: 2px;
-}
-
-.bg-custom-dark {
-  background-color: #06000d;
+  color: var(--color-text-main) !important;
+  border-bottom: 2px solid var(--color-primary);
 }
